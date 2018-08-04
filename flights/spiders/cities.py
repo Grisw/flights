@@ -16,7 +16,7 @@ class CitiesSpider(scrapy.Spider):
         rows = response.xpath('/html/body/table[3]//tr[.//a]')
         for row in rows:
             item = CitiesItem()
-            item['name'] = row.xpath('./td[1]/a/text()').extract_first()
+            item['city'] = row.xpath('./td[1]/a/text()').extract_first()
             item['code'] = row.xpath('./td[2]/a/text()').extract_first()
+            item['airport'] = row.xpath('./td[6]/text()').extract_first()
             yield item
-

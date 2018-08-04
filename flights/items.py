@@ -9,11 +9,22 @@ import scrapy
 
 
 class FlightsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    airline = scrapy.Field()
+    flight = scrapy.Field()
+    departure = scrapy.Field()
+    arrival = scrapy.Field()
+    departure_time = scrapy.Field()
+    arrival_time = scrapy.Field()
+    price = scrapy.Field()
+    crawl_time = scrapy.Field()
 
 
 class CitiesItem(scrapy.Item):
-    name = scrapy.Field()
     code = scrapy.Field()
+    city = scrapy.Field()
+    airport = scrapy.Field()
+
+
+class AirlinesItem(scrapy.Item):
+    code = scrapy.Field()
+    name = scrapy.Field()
